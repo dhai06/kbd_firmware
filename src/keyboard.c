@@ -1,5 +1,19 @@
 #include <keyboard.h>
 
+// row defs
+GPIO_TypeDef* row_ports[ROWS] = {ROW_1_GPIO_Port, ROW_2_GPIO_Port, ROW_3_GPIO_Port, ROW_4_GPIO_Port, ROW_5_GPIO_Port};
+uint16_t row_pins[ROWS] = {ROW_1_Pin, ROW_2_Pin, ROW_3_Pin, ROW_4_Pin, ROW_5_Pin};
+// col defs
+GPIO_TypeDef* col_ports[COLS] = {COL_0_GPIO_Port, COL_1_GPIO_Port, COL_2_GPIO_Port, COL_3_GPIO_Port,
+                                 COL_4_GPIO_Port, COL_5_GPIO_Port, COL_6_GPIO_Port, COL_7_GPIO_Port,
+                                 COL_8_GPIO_Port, COL_9_GPIO_Port, COL_10_GPIO_Port, COL_11_GPIO_Port,
+                                 COL_12_GPIO_Port, COL_13_GPIO_Port, COL_14_GPIO_Port, COL_15_GPIO_Port}; 
+uint16_t col_pins[COLS] = {COL_0_Pin, COL_1_Pin, COL_2_Pin, COL_3_Pin,
+                           COL_4_Pin, COL_5_Pin, COL_6_Pin, COL_7_Pin,
+                           COL_8_Pin, COL_9_Pin, COL_10_Pin, COL_11_Pin,
+                           COL_12_Pin, COL_13_Pin, COL_14_Pin, COL_15_Pin}; 
+
+
 const uint8_t keymap[ROWS][COLS] = {
     // Row 0
     {HID_KEY_PAUSE, HID_KEY_ESCAPE, HID_KEY_F1, HID_KEY_F2, HID_KEY_F3, HID_KEY_F4, HID_KEY_F5, HID_KEY_F6, HID_KEY_F7, 

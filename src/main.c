@@ -19,6 +19,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "usb_device.h"
+#include <keyboard.h>
+
+NkroReport_t keyboard_report;
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */

@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include "stm32f0xx_hal.h" // For GPIO definitions
+#include "main.h"        // For pin definitions
 
 #define ROWS 6
 #define COLS 16 
@@ -21,6 +22,19 @@ typedef struct {
     uint8_t modifiers;      // Modifier keys bitmask
     uint8_t keys[15];       // Bitmask for keys (0x00 to 0x77)
 } NkroReport_t;
+
+// row defs
+extern GPIO_TypeDef* row_ports[ROWS];
+extern uint16_t row_pins[ROWS];
+// col defs
+extern GPIO_TypeDef* col_ports[COLS];
+extern uint16_t col_pins[COLS];
+
+extern const uint8_t keymap[ROWS][COLS];
+
+extern NkroReport_t keyboard_report;
+
+void scan_matrix(NkroReport_t* report);
 
 // keycodes - from https://github.com/hathach/tinyusb/blob/master/src/class/hid/hid.h
 //--------------------------------------------------------------------+
